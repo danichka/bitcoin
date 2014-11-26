@@ -1,18 +1,7 @@
 class UsersController < ApplicationController
-  
-  def index
-    @user = User.all
-  end
+  #TODO поиск пользователя переписать в before_action (rusrails) 
 
-  def show
-    unless @user = User.find(params[:id])
-      render text: "Page not found", status:
-      404
-    end
-  end
-  
-  def new
-    
+  def home
   end
 
 end

@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
-
+  root 'users#home'
+  get "views/users/home"
   resources :bitcoin_addresses
-  resources :users
   
+  devise_for :users
+  # resources :users, only: [:show, :index]
+
   devise_scope :user do 
     get "/users/sign_out" => "devise/sessions#destroy"
   end
-
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

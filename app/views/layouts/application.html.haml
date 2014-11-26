@@ -7,12 +7,15 @@
 = csrf_meta_tags
 
 %body
+
   .sessionInfo
+
   - if current_user
     = current_user.email
-    | #{linck_to "выйти", destroy_user_session_path}
+    = link_to "sign_out",  destroy_user_session_path
+    
   - else
     = link_to "вход", new_user_session_path
     | #{link_to "регистрация",  new_user_registration_path}
-= yield
 
+= yield
