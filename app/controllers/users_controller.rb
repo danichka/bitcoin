@@ -6,5 +6,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @bitcoin_addresses = BitcoinAddress.all
   end
 end

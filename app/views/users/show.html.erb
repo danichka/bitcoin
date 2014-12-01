@@ -1,1 +1,8 @@
 <%= @user.email %>
+
+<% @bitcoin_addresses.each do |i| %>
+    <% if i.user_id == @user.id %>
+    <p>bitcoin_addresses: <%= i.address %></p>
+    <p>balance :<%= i.final_balance %></p>
+    <% end %>
+<% end %>
